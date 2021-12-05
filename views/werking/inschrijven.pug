@@ -1,0 +1,94 @@
+extends ../layout
+block content
+
+    body
+        // hero area
+        .hero-area.hero-bg
+            .container
+                .row
+                    .col-lg-9.offset-lg-2.text-center
+                        .hero-text
+                            .hero-text-tablecell
+                                p.subtitle Werking
+                                h1 #{titel}
+                                .hero-btns
+        // end hero area
+
+
+        // contact form
+        .contact-from-section.mt-150.mb-150
+            .container
+                .row
+                    .col-lg-8.mb-5.mb-lg-0
+                        .form-title
+                            h2 Wil je een kind inschrijven?
+                            p(style="text-align:justify;")
+                                | Voer volgende gegevens in! Wij zullen u vervolgens een bevestigingsmail zenden.
+                            p
+                                | Momenteel zijn er #[strong !{data.lid_count}] leden ingeschreven.
+                        #form_status
+                        .contact-form
+                            form(method='POST' action='')
+                                p
+                                    label(for='first_name') Voornaam:
+                                    input#first_name.form-control(type='text', placeholder='Bv Marthe', name='first_name', required='true' value=(undefined===lid ? '' : lid.first_name) )
+                                    <br>
+                                    label(for='family_name') Achternaam:
+                                    input#family_name.form-control(type='text', placeholder='Bv Beke', name='family_name', required='true' value=(undefined===lid ? '' : lid.family_name) )
+                                    <br>
+
+                                    label(for='gsm_ouder') Telefoon nummer ouder of voogd:
+                                    input#gsm_ouder.form-control(type='text', placeholder='Bv 0498/758965', name='gsm_ouder', required='true' value=(undefined === lid ? '' : lid.gsm_ouder) )
+                                    <br>
+
+                                    label(for='email_ouder') Email adres ouder of voogd:
+                                    input#email_ouder.form-control(type='text', placeholder='Bv naam@hotmail.com', name='email_ouder', required='true' value=(undefined === lid ? '' : lid.email_ouder) )
+                                    <br>
+
+                                    label(for='groep') Groep:
+                                    input#groep.form-control(type='text', placeholder='Bv Kapoenen, Kabouters, Jonggidsen of Gidsen', name='groep', required='true' value=(undefined === lid ? '' : lid.groep) )
+                                    <br>
+
+                                    label(for='date_of_birth') Geboortedatum:
+                                    input#date_of_birth.form-control(type='date', name='date_of_birth' required='true' value=(undefined===lid ? '' : lid.date_of_birth) )
+
+                                p
+                                    button.btn.btn-primary(type='submit') Inschrijven
+
+                            if errors
+                                ul
+                                    for errors in errors
+                                        li!=error.msg
+
+                    .col-lg-4
+                        .contact-form-wrap
+                            .contact-form-box
+                                h4
+                                    i.far.fa-money-bill-alt
+                                    |  Inschrijvingsgeld
+                                p
+                                    | €49 <br>
+                                    br
+                                    | Na inschrijving over te schrijven op BE79 0014 6967 9433 met als vermelding: <br>
+                                    br
+                                    | inschrijving 2021/2022 - naam en tak
+                            .contact-form-box
+                                h4
+                                    i.far.fa-clock
+                                    |  Activiteiten
+                                p
+                                    | Elke zaterdag: 14u - 17u
+
+                            .contact-form-box
+                                h4
+                                    i.fas.fa-address-book
+                                    |  Contact
+                                p
+                                    |  Email: groepsleiding@grimmertinge.be
+
+        // end contact form
+        if errors
+            ul
+                for error in errors
+                    li!= error.msg
+

@@ -1,0 +1,44 @@
+extends ../layout
+
+block content
+    body
+        // hero area
+        .hero-area.hero-bg
+            .container
+                .row
+                    .col-lg-9.offset-lg-2.text-center
+                        .hero-text
+                            .hero-text-tablecell
+                                h1 #{title}
+        // end hero area
+
+        form(method='POST' action='')
+            div.form-group
+                label(for='first_name') First Name:
+                input#first_name.form-control(type='text', placeholder='First name (Jan)' name='first_name' required='true' value=(undefined===lid ? '' : lid.first_name) )
+            div.form-group
+                label(for='family_name') Family Name:
+                input#family_name.form-control(type='text', placeholder='Family name (Janssens)' name='family_name' required='true' value=(undefined===lid ? '' : lid.family_name))
+            div.form-group
+                label(for='date_of_birth') Date of birth:
+                input#date_of_birth.form-control(type='date', name='date_of_birth' value=(undefined===lid ? '' : lid.date_of_birth_yyyy_mm_dd) )
+            div.form-group
+                //(for='groep') Groep:
+                label Groep:
+                //input#groep.form-control(type='text', placeholder='Kabouters, kapoenen, jonggidsen of gidsen', name='groep' value=(undefined===lid ? '' : lid.groep) )
+                for groep in groep
+                    div(style='display: inline; padding-right:10px;')
+                        input.checkbox-input(type='checkbox', name='groep', id=groep._id, value=groep._id, checked=groep.checked )
+                        label(for=groep._id) #{groep.name}
+            div.form-group
+                label(for='gsm_ouder') gsm_ouder:
+                input#gsm_ouder.form-control(type='text', name='gsm_ouder' value=(undefined === lid ? '' : lid.gsm_ouder) )
+            div.form-group
+                label(for='email_ouder') Email ouder:
+                input#email_ouder.form-control(type='text', name='email_ouder' value=(undefined === lid ? '' : lid.email_ouder) )
+            button.btn.btn-primary(type='submit') Submit
+
+        if errors
+            ul
+                for error in errors
+                    li!= error.msg

@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+    h1= title
+
+    ul
+        each lid in lid_list
+            li
+                a(href=lid.url) #{lid.name}
+                |  (#{lid.date_of_birth_yyyy_mm_dd})
+
+        else
+            li Er zijn geen leden.

@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+
+    h1 Lid: #{lid.name}
+    p #{lid.groep}
+
+    div(style='margin-left:20px;margin-top:20px')
+
+        h4 Leden
+
+        dl
+        each lid in lid_list
+            dt
+                a(href=lid.url) #{lid.title}
+
+        else
+            p Geen leden
+
+    hr
+    p
+        a(href=lid.url+'/update') Update lid

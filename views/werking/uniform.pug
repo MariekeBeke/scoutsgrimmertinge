@@ -1,0 +1,87 @@
+extends ../layout
+
+block content
+
+    body
+        // hero area
+        .hero-area.hero-bg
+            .container
+                .row
+                    .col-lg-9.offset-lg-2.text-center
+                        .hero-text
+                            .hero-text-tablecell
+                                p.subtitle #{description}
+                                h1 #{titel}
+        // end hero area
+
+        // begin uniform
+        .mt-150
+            .container
+                .row
+                    .col-lg-8.offset-lg-2.text-center
+                        .section-title
+                            h3
+                                | De Das
+                            p
+                                | Verplicht
+                .row
+                    .col-lg-6.col-md-6.mb-4.mb-md-5.offset-lg-2
+                        .align-content-center
+                            .content
+                                p(style="text-align:justify;")
+                                    | Elke scouts heeft zijn eigen das met specifieke kleuren. De kleuren van onze das  zijn bordeaux-rood en kaki-groen. De das kost €8. Je kan deze kopen voor of na de vergaderingen.
+                    .col-lg-4.col-md-6.text-center
+                        .align-content-center
+                            .content
+                                img(src='img/Uniform/das.jpg', alt='')
+            .container
+                .row
+                    .col-lg-8.offset-lg-2.text-center
+                        .section-title
+                            p
+                                | !{' '}
+                            h3
+                                | Het Hemd
+                            p
+                                | Facultatief
+                .row
+                    .col-lg-6.col-md-6.mb-4.mb-md-5.offset-lg-2
+                        .content
+                            p(style="text-align:justify;")
+                                | Ook ons scoutshemd dragen we vol trots. Hier kunnen we onze kentekentjes op bevestigen. Het tekentje van het jaarthema komt bijvoorbeeld in de rechterbovenhoek. Wij verkopen geen nieuwe hemden aan de lokalen, maar wel tweedehandshemden. Zit je maat er niet meer tussen? Of wil je toch liever een nieuw hemd, dan kan je bij ons passen, zodat je gemakkelijk online je hemd in de juiste maat bestelt bij de Hopper-winkel.
+                    .col-lg-4.col-md-6.text-center
+                        .align-content-center
+                            .content
+                                img(src='img/Uniform/hemd.PNG', alt='')
+            .container
+                .row
+                    .col-lg-8.offset-lg-2.text-center
+                        .section-title
+                            h3
+                                | T-shirt
+                            p
+                                | Facultatief
+                .row
+                    .col-lg-6.col-md-6.mb-4.mb-md-5.offset-lg-2
+                        .content
+                            p(style="text-align:justify;")
+                                | Een t-shirt is een leuk extraatje als je maar niet genoeg kan krijgen van rond te lopen in Grimmertinge-kledij! Een t-shirt kost €15 en kan je net zoals de das voor of na de vergaderingen kopen aan de lokalen.
+                    .col-lg-4.col-md-6.text-center
+                        .align-content-center
+                            .content
+                                img(src='img/Uniform/tshirt.jpg', alt='')
+            .container
+                .row
+                    .col-lg-8.offset-lg-2.text-center
+                        .section-title
+                            h3
+                                | Pull
+                            p
+                                | Coming soon!
+            .container
+                .row
+                    .col-lg-8.offset-lg-2.text-center
+                        .section-title
+                            h3
+                                | !{' '}
+        // end uniform

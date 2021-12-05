@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+
+    // hero area
+    .hero-area.hero-bg
+        .container
+            .row
+                .col-lg-9.offset-lg-2.text-center
+                    .hero-text
+                        .hero-text-tablecell
+                            p.subtitle Werking
+                            h1 #{titel}
+                            .hero-btns
+    // end hero area
+
+    // begin inschrijving bevestiging
+    section.cart-banner.pt-100.pb-100
+        .container
+            .row.clearfix
+                .content-column.col-lg-6
+                    h2 Inschrijving voltooid
+                    h4 Welkom in de scouts
+                    a.cart-btn.mt-3(href='home')
+                        i.fas.fa-home
+                        |  Terug naar de startpagina
+    // end inschrijving bevestiging

@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+
+    body
+        // hero area
+        .hero-area.hero-bg
+            .container
+                .row
+                    .col-lg-9.offset-lg-2.text-center
+                        .hero-text
+                            .hero-text-tablecell
+                                p.subtitle Contact
+                                h1 #{titel}
+        // end hero area
+
+        // team section
+        .mt-150
+            .container
+                .row
+                    .col-lg-8.offset-lg-2.text-center
+                        .section-title
+                            h3
+                                | Heb je een vraag?
+                            p
+                                | Aarzel niet om ons te contacteren!
+                            p
+                                i.fas.fa-envelope  &nbsp jonggidsen@grimmertinge.be
+                .row
+                    each leiding in jonggidsenleiding_list
+                        .col-lg-4.col-md-6
+                            .single-team-item
+                                .team-bg
+                                    img(src="/img/leiding/" + leiding.foto, alt='Foto leiding', width='292.41' height='389.88')
+                                h4
+                                    | #{leiding.first_name}
+                                    span #{leiding.totemnaam}
+                                    span #{leiding.gsm}
+                                p <br><br>
+        // end team section

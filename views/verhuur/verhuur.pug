@@ -1,0 +1,64 @@
+extends ../layout
+
+block content
+
+    body
+        // hero area
+        .hero-area.hero-bg
+            .container
+                .row
+                    .col-lg-9.offset-lg-2.text-center
+                        .hero-text
+                            .hero-text-tablecell
+                                p.subtitle #{description}
+                                h1 #{titel}
+        // end hero area
+
+        // contact form
+        .contact-from-section.mt-150.mb-150
+            .container
+                .row
+                    .col-lg-8.mb-5.mb-lg-0
+                        .form-title
+                            h2 Onze lokalen
+                                p(style="text-align:justify;")
+                                    | Onze scoutsgroep kende de afgelopen jaren een enorme groei, waardoor uitbreiding van de gebouwen noodzakelijk was. Daarenboven willen wij beter tegemoet komen aan onze huurders: nieuwe nutsvoorzieningen, grotere en ruimere lokalen, ingerichte keuken, nieuw sanitair etc. De ruimtes in de huidige (bestaande) gebouwen blijven tijdens de zomer van 2022 beschikbaar voor verhuur. De nieuwe ruimtes zullen pas vanaf het volgende scoutsjaar voor verhuur beschikbaar zijn.
+                                p(style="text-align:justify;")
+                                    | Kortom, er zijn 4 lokalen te huur, inclusief een sanitair blok en grote keuken. Er is voldoende plaats voor maximum 50 personen.
+                                p(style="text-align:justify;")
+                                    | Bij interesse kunt u ons contacteren voor alle gedetailleerde info over de lokalen, de voorzieningen en de prijzen.
+                                p <br>
+
+                            h2 Locatie
+                            p
+                                |
+                            .video-box
+                                iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4685.142332185956!2d3.17523920986396!3d51.20337354271389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c351436713ffff%3A0xda1d5cbe1fe854e!2sLegeweg%20269b%2C%208200%20Brugge!5e0!3m2!1snl!2sbe!4v1638564355925!5m2!1snl!2sbe' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy')
+                    .col-lg-4
+                        .contact-form-wrap
+                            .contact-form-box
+                                h4
+                                    i.fas.fa-address-book
+                                    |  Contact
+                                button(type='button' onclick='loadDoc()') Bekijk gegevens
+                                p#geg
+                                script.
+                                    function loadDoc() {
+                                        var xhttp = new XMLHttpRequest();
+                                        xhttp.onreadystatechange = function () {
+                                            if (this.readyState === 4 && this.status === 200) {
+                                                document.getElementById("geg").innerHTML = this.responseText;
+                                            }
+                                        };
+                                        xhttp.open('GET', 'gegev.txt', true);       // txt file met nieuwe tekst
+                                        xhttp.onload = function(){
+                                            if(this.status === 200){
+                                                console.log("Ok");
+                                                console.log(xhttp.responseText);
+                                            }
+                                            else if (this.status === 404) console.log("Not found");
+                                            else console.log("Nog iets anders.");
+                                        }
+                                        xhttp.send(); // Verzenden
+                                    }
+        // end contact form
