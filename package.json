@@ -19,11 +19,12 @@
     "express": "~4.16.1",
     "express-validator": "^6.13.0",
     "http-errors": "~1.6.3",
+    "luxon": "^2.1.1",
     "mongoose": "^6.0.14",
     "morgan": "~1.9.1",
     "node-iframe": "^1.5.10",
+    "pg": "^8.7.1",
     "pug": "2.0.0-beta11",
-    "luxon": "^2.1.1",
     "sharp": "^0.29.3"
   },
   "devDependencies": {
