@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "serverstart": "DEBUG=Scouts-Grimmertinge:* & npm run devstart"
+    "serverstart": "DEBUG=scoutsgrimmertinge:* & npm run devstart"
   },
   "dependencies": {
     "async": "^3.2.2",
