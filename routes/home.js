@@ -59,7 +59,7 @@ router.get('/oudercomite', (req, res, next) => {
 
 
 
-// Programmaboekje
+// programmaboekje
 
 // programmaboekje kapoenen
 router.get('/programma_kapoenen', (req, res, next) => {

@@ -8,8 +8,8 @@ var LeidingSchema = new mongoose.Schema(
         family_name: {type: String, required: true, maxLength: 100},
         totemnaam: {type: String, required: true, maxLength: 100},
         date_of_birth: {type: Date},
-        groep: {type: String, enum: ['Kabouters', 'Kapoenen', 'Jonggidsen', 'Gidse',], required: true, maxLength: 100},
-        gsm: {type: Number, required: true, maxLength: 100},
+        groep: {type: String, enum: ['Kabouters', 'Kapoenen', 'Jonggidsen', 'Gidsen',], required: true, maxLength: 100},
+        gsm: {type: String, required: true, maxLength: 100},
         foto: {type: String, required: true},
         is_groeps: {type: Boolean, required: true, maxLength: 100},
     }
